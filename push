@@ -1,6 +1,6 @@
 #!/bin/bash
 
-: "${ORG:=PelicanPlatform}"
+: "${ORG:=pelican_platform}"
 : "${INAME:=port-redirector}"
 : "${TAG:=latest}"
 : "${REGISTRY:=hub.opensciencegrid.org}"
