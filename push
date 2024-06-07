@@ -1,0 +1,19 @@
+#!/bin/bash
+
+: "${ORG:=PelicanPlatform}"
+: "${INAME:=port-redirector}"
+: "${TAG:=latest}"
+: "${REGISTRY:=hub.opensciencegrid.org}"
+
+
+if command -v podman &>/dev/null; then
+    podman push "${ORG}/${INAME}:${TAG}" "docker://${REGISTRY}/${ORG}/${INAME}:${TAG}"
+elif command -v docker &>/dev/null; then
+    docker tag "${ORG}/${INAME}:${TAG}" "${REGISTRY}/${ORG}/${INAME}:${TAG}" &&
+    docker push "${REGISTRY}/${ORG}/${INAME}:${TAG}" 
+else
+    echo >&2 "Neither docker nor podman were found"
+    exit 127
+fi
+
+# vim:ft=bash
