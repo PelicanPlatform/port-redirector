@@ -25,3 +25,7 @@ The following environment variables are accepted:
     The port that incoming connections will arrive on.
     If not specified, this is `8000`.
 
+-   `PROTOCOL`:
+    The protocol (`http` or `https`), that the redirect
+    should use.  Defaults to `https`.
+
