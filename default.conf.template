@@ -1,5 +1,5 @@
 server {
     listen ${LISTEN_PORT};
-    return 301 https://${PELICAN_SERVER_HOSTNAME}:${PELICAN_CACHE_PORT}$request_uri;
+    return 301 ${PROTOCOL}://${PELICAN_SERVER_HOSTNAME}:${PELICAN_CACHE_PORT}$request_uri;
 }
 
